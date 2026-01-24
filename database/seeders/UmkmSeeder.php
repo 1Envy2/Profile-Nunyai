@@ -137,14 +137,8 @@ class UmkmSeeder extends Seeder
         DB::table('umkm_links')->insert([
             [
                 'umkm_id' => $umkmId3, 
-                'platform_name' => 'GrabFood', 
-                'url' => 'https://food.grab.com/bakso-sonhaji', 
-                'created_at' => now()
-            ],
-            [
-                'umkm_id' => $umkmId3, 
-                'platform_name' => 'Instagram', 
-                'url' => '@baksosonhaji_nunyai', 
+                'platform_name' => 'Facebook', 
+                'url' => 'https://www.facebook.com/ahmadlambardislah', 
                 'created_at' => now()
             ],
         ]);
