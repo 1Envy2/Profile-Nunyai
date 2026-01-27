@@ -25,10 +25,10 @@ class UmkmSeeder extends Seeder
             'operational_hours' => '05:00 - 17:00',
             'payment_method' => 'Tunai, QRIS, Transfer',
             'google_maps_status' => 'https://maps.app.goo.gl/gUJBQm9QbiqzFRsC9',
-            'store_photo' => 'toko_tahu_siger_emas.jpg',
+            'store_photo' => 'Toko_tahu_siger_emas.jpg',
             'owner_photo' => 'owner_tahu_siger.jpeg',
             'created_at' => $now,
-            'updated_at' => $now,
+            'updated_at' => $now    ,
         ]);
 
         DB::table('umkm_photos')->insert([
@@ -153,7 +153,7 @@ class UmkmSeeder extends Seeder
             'payment_method' => 'Tunai, Qris',
             'google_maps_status' => '', // Bersedia diperbarui lokasinya
             'store_photo' => 'toko_fathar.jpeg',
-            'owner_photo' => 'owner_toko_fathar.jpeg',
+            'owner_photo' => 'owner_toko_fathar.jpg',
             'created_at' => $now,
             'updated_at' => $now,
         ]);
@@ -188,7 +188,7 @@ class UmkmSeeder extends Seeder
             'payment_method' => 'Tunai, Qris',
             'google_maps_status' => '', // Bersedia diperbarui lokasinya
             'store_photo' => 'toko_Loundry_Pelangi.jpeg',
-            'owner_photo' => 'owner_loundry_pelangi.jpg',
+            'owner_photo' => 'owner_loundry_pelangi.png',
             'created_at' => $now,
             'updated_at' => $now,
         ]);
@@ -240,6 +240,105 @@ class UmkmSeeder extends Seeder
 
         DB::table('umkm_photos')->insert([
             ['umkm_id' => $umkmId8, 'photo_path' => 'nasi_uduk_bunila.jpeg', 'caption' => 'Nasi Uduk', 'created_at' => $now],
+        ]);
+
+
+        // ==========================================
+        // 9. By Muli Laundry
+        // ==========================================
+        $umkmId9 = DB::table('umkms')->insertGetId([
+            'owner_name' => 'Bapak Rahmat',
+            'business_name' => 'By Muli Laundry',
+            'address' => 'Jl. Rajabasa Nunyai',
+            'contact' => '085709620174',
+            'category' => 'Jasa',
+            'description' => 'By Muli Laundry hadir sebagai solusi praktis untuk perawatan pakaian Anda di area Rajabasa Nunyai. Kami mengutamakan kebersihan maksimal dan keharuman yang tahan lama untuk setiap helai pakaian. Dengan pengerjaan yang teliti dan tepat waktu, kami memastikan pakaian Anda kembali dalam kondisi prima, rapi, dan siap pakai.',
+            'operational_hours' => '07:30 - 17:00 WIB',
+            'payment_method' => 'Tunai, QRIS',
+            'google_maps_status' => '',
+            'store_photo' => 'Toko_By Muli Laundry.jpg',
+            'owner_photo' => 'default_owner.jpg',
+            'created_at' => $now,
+            'updated_at' => $now,
+        ]);
+
+        DB::table('umkm_photos')->insert([
+            [
+                'umkm_id' => $umkmId9, 
+                'photo_path' => 'By Muli Laundry.jpg', 
+                'caption' => 'Layanan Cuci dan Setrika Rapi', 
+                'created_at' => $now
+            ],
+        ]);
+
+
+        // ==========================================
+        // 10. Geprek Yasaka Fried Chicken
+        // ==========================================
+        $umkmId10 = DB::table('umkms')->insertGetId([
+            'owner_name' => 'Bapak Nurul Huda',
+            'business_name' => 'Geprek Yasaka Fried Chicken',
+            'address' => 'Jl. Rajabasa Nunyai',
+            'contact' => '085896881690',
+            'category' => 'Kuliner',
+            'description' => 'Geprek Yasaka Fried Chicken menyajikan ayam goreng krispi yang lezat dengan sambal geprek pilihan yang pedas dan menggugah selera. Terletak strategis di Jalan Rajabasa Nunyai, kami menawarkan kualitas rasa ayam goreng ala Yasaka yang sudah dikenal luas dengan harga yang sangat terjangkau. Selain sajian kuliner, kami juga menyediakan layanan pengisian gas LPG untuk mempermudah kebutuhan rumah tangga warga sekitar.',
+            'operational_hours' => '07:00 - 18:00 WIB',
+            'payment_method' => 'Tunai Qris',
+            'google_maps_status' => '',
+            'store_photo' => 'Toko_Yasaka Fried Chicken.jpg',
+            'owner_photo' => 'default_owner.jpg',
+            'created_at' => $now,
+            'updated_at' => $now,
+        ]);
+
+        DB::table('umkm_photos')->insert([
+            [
+                'umkm_id' => $umkmId10, 
+                'photo_path' => 'Yasaka Fried Chicken.jpg', 
+                'caption' => 'Tempat', 
+                'created_at' => $now
+            ],
+        ]);
+
+
+        // ==========================================
+        // 11. Peyek Ibu Wulan
+        // ==========================================
+        $umkmId11 = DB::table('umkms')->insertGetId([
+            'owner_name' => 'Ibu Widarsih',
+            'business_name' => 'Peyek Ibu Wulan',
+            'address' => 'Jl. A. Kadir II No.39, Rajabasa, Kota Bandar Lampung',
+            'contact' => '089624317693',
+            'category' => 'Kuliner',
+            'description' => 'Peyek Ibu Wulan menghadirkan kelezatan camilan tradisional yang sehat dan autentik. Kami menyediakan aneka varian peyek seperti peyek teri dan kacang, serta kerupuk gendar dan keripik pisang gurih. Keunggulan produk kami adalah penggunaan bahan-bahan alami pilihan tanpa tambahan micin (MSG), sehingga aman dikonsumsi keluarga. Dengan kemasan mulai dari 250 gram hingga 1 kg, produk kami tetap renyah dan nikmat hingga satu bulan.',
+            'operational_hours' => 'Sabtu - Minggu (Fleksibel)',
+            'payment_method' => 'Tunai',
+            'google_maps_status' => '',
+            'store_photo' => 'toko_peyek_wulan.jpg',
+            'owner_photo' => 'Owner_Penyek Bu Wulan.jpg',
+            'created_at' => $now,
+            'updated_at' => $now,
+        ]);
+
+        DB::table('umkm_photos')->insert([
+            [
+                'umkm_id' => $umkmId11, 
+                'photo_path' => 'Peyek Teri.jpg', 
+                'caption' => 'Peyek Teri', 
+                'created_at' => $now
+            ],
+            [
+                'umkm_id' => $umkmId11, 
+                'photo_path' => 'Kerupuk Gendar.jpg', 
+                'caption' => 'Kerupuk Gendar', 
+                'created_at' => $now
+            ],
+            [
+                'umkm_id' => $umkmId11, 
+                'photo_path' => 'keripik pisang.jpg', 
+                'caption' => 'Keripik Pisang', 
+                'created_at' => $now
+            ],
         ]);
     }
 }
