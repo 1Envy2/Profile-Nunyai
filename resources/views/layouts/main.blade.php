@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="id" class="selection:bg-nunyai-green/30 selection:text-nunyai-text">
+<html lang="id" class="selection:bg-[#72891B]/30 selection:text-[#442D1C] overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profil Kelurahan Nunyai</title>
     
@@ -22,11 +22,11 @@
                 'nunyai-text': '#442D1C',
               },
               animation: {
-                'fade-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'fade-up': 'fadeInUp 0.6s ease-out forwards',
               },
               keyframes: {
                 fadeInUp: {
-                  '0%': { opacity: '0', transform: 'translateY(20px)' },
+                  '0%': { opacity: '0', transform: 'translateY(10px)' },
                   '100%': { opacity: '1', transform: 'translateY(0)' },
                 }
               }
@@ -36,27 +36,29 @@
     </script>
 
     <style>
-        /* Custom Scrollbar - Nunyai Theme */
+        /* Mengunci horizontal scroll secara global */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #E8D1A7;
+            color: #442D1C;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Custom Scrollbar - Menyesuaikan Palette #84592B */
         .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(68, 45, 28, 0.05); /* nunyai-text with low opacity */
+            background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #84592B; 
-            border-radius: 20px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #72891B;
+            border-radius: 10px;
         }
 
-        /* Smooth UI Elements */
-        .fade-in { 
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-        }
-        
-        /* Navbar Hover Effect */
+        /* Navbar Underline Effect */
         .nav-underline { position: relative; }
         .nav-underline::after {
             content: ''; 
@@ -66,42 +68,30 @@
             bottom: -4px; 
             left: 0;
             background-color: #72891B; 
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 0.3s ease;
         }
         .nav-underline:hover::after, .nav-active::after { width: 100%; }
 
-        html { 
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #E8D1A7;
-            color: #442D1C;
-        }
+        /* Mencegah highlight biru saat klik di mobile */
+        * { -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased overflow-x-hidden custom-scrollbar">
+<body class="min-h-screen flex flex-col antialiased overflow-x-hidden">
 
-    {{-- Header / Navigation --}}
     @include('layouts.navbar')
 
-    {{-- Main Content --}}
-    <main class="flex-grow">
-        {{-- Container diatur di masing-masing view untuk fleksibilitas --}}
-        <div class="animate-fade-up">
+    <main class="flex-grow flex flex-col w-full overflow-x-hidden">
+        {{-- Yield Content diletakkan di dalam div animasi --}}
+        <div class="animate-fade-up w-full">
             @yield('content')
         </div>
     </main>
 
-    {{-- Footer Area --}}
     @include('layouts.footer')
 
-    {{-- Push Modals from other views --}}
     @stack('modals')
 
-    {{-- Global Scripts --}}
     @stack('scripts')
+
 </body>
 </html>
